@@ -4,4 +4,5 @@ This README.md file explains the functions of various shell files
 	3) 2-groups: This Script prints out all the groups from which the current user is part of using the command ~groups
 	4) 3-new_owner: This script changes the owner of the file hello from sudo to  betty using the command 	~sudo chown betty hello
 	5) 4-empty: This script creates an empty file called hello using the command ~touch hello
-	6) 
+	6) 5-execute: This script gives executable privelege to the file hello with the command `chmod 100 hello
+	7)  
