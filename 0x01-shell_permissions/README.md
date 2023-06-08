@@ -7,4 +7,12 @@ This README.md file explains the functions of various shell files
 	6) 5-execute: This script gives executable privelege to the file hello with the command `chmod 100 hello
 	7) 6-multiple_permissions: This sript will assign executable permission to the owner and group and read permission to other users
 	8) 7-everybody: this script grants execution permission to the owner, the group owner and the other users to the file
-	9)  
+	9) 8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
+	10) 9- 
