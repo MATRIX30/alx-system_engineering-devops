@@ -6,4 +6,5 @@ This README.md file explains the functions of various shell files
 	5) 4-empty: This script creates an empty file called hello using the command ~touch hello
 	6) 5-execute: This script gives executable privelege to the file hello with the command `chmod 100 hello
 	7) 6-multiple_permissions: This sript will assign executable permission to the owner and group and read permission to other users
-	8) 
+	8) 7-everybody: this script grants execution permission to the owner, the group owner and the other users to the file
+	9)  
