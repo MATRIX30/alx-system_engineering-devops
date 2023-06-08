@@ -15,4 +15,5 @@ This README.md file explains the functions of various shell files
 	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
 	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
 	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
-	10) 9- 
+	10) 9-John_Doe: this script creates the following permission -rwxr-x-wx
+	11) 10-
