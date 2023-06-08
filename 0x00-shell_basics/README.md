@@ -12,4 +12,4 @@ This File list the various scripts and what they do:
 	10) 9-firstdirdeletion: This file delets the directory /tmp/my_first_directory
 	11) 10-back: This file takes you to the previous directory from the current working directory
 	12) 11-list: This script will list all the files in the current working directory, parent director and the /root directory
- 
+	13) 12-file_type: This script will display the file type of the file iamafile located in /tmp 
