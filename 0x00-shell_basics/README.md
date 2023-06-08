@@ -4,4 +4,5 @@ This File list the various scripts and what they do:
 	2) 1-listit: This file list the content of the current working directory
 	3) 2-bring_me_home: This file takes us back to our home directory
 	4) 3-listfiles: This file list all the files in the current directory int a long format
-	5) 4-listmorefiles: This file when executed will list all the files includeing hidden files i.e files that start with a . 
+	5) 4-listmorefiles: This file when executed will list all the files includeing hidden files i.e files that start with a .
+	6) 5-listfilesdigitonly: This file is going to list all the files including hidden files in long format and showing their user group and group id in numerical values 
