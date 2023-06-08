@@ -17,4 +17,5 @@ This README.md file explains the functions of various shell files
 	10) 9-8-James_Bond: this script gives no permision to owner and group but all permision to other users
 	10) 9-John_Doe: this script creates the following permission -rwxr-x-wx
 	11) 10-mirror_permission: this script copies permision from olleh and applies to hello file 
-	12) 11-
+	12) 11-directories_permissions: this script adds executable permision to all subdirectories of the current directory
+	13) 12
