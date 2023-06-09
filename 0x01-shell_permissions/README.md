@@ -20,3 +20,5 @@ This README.md file explains the functions of various shell files
 	12) 11-directories_permissions: this script adds executable permision to all subdirectories of the current directory
 	13) 12-directory permission: this file creates a folder call my_dire and sets it permission to 751
 	14) 13-change_group: change the group of hello file to school
+	15) 14-change_owner_and_group: this script changes the owner to vincent and group to staff for all files and directories in the current workign directory
+	16) 
