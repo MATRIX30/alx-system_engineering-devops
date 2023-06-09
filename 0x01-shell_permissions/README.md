@@ -22,4 +22,6 @@ This README.md file explains the functions of various shell files
 	14) 13-change_group: change the group of hello file to school
 	15) 14-change_owner_and_group: this script changes the owner to vincent and group to staff for all files and directories in the current workign directory
 	16) 15_symbolic_link_permissions: this changes owner and group for a symbolic link
-	17) 16 
+	17) 16-if_only: Write a script that changes the owner of the file hello to betty only if it is owned by the user guillaume.
+	18) 16-star_wars: This script plays star wars
+ 
