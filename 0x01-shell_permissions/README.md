@@ -18,4 +18,4 @@ This README.md file explains the functions of various shell files
 	10) 9-John_Doe: this script creates the following permission -rwxr-x-wx
 	11) 10-mirror_permission: this script copies permision from olleh and applies to hello file 
 	12) 11-directories_permissions: this script adds executable permision to all subdirectories of the current directory
-	13) 12
+	13) 12-directory permission: this file creates a folder call my_dire and sets it permission to 751
