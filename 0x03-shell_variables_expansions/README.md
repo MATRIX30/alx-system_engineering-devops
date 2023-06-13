@@ -4,4 +4,9 @@ This README.md file is meant to provide information about the functioning of the
 	2) 2-path: this script adds the folder /action to the PATH variable that holds all the folders inwhich linux looks for commands
 	3) 3-paths: This script counts the number of folders in the PATH variable	
 	4) 4-global_variables: This script list all the global environmental variables of the system
-	5)  
+	5) 5-local_variables: this script list all the local variables using the set command 
+	6) 65-local_variables: this script list all the local variables using the set command 
+	6) 65-local_variables: this script list all the local variables using the set command 
+	6) 65-local_variables: this script list all the local variables using the set command 
+	6) 65-local_variables: this script list all the local variables using the set command 
+	6) 6 
