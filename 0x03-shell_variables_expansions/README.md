@@ -14,3 +14,5 @@ This README.md file is meant to provide information about the functioning of the
 	8) 8-true_knowledge: This script adds to the variable TRUEKNOWLEDGE the value of  
 	9) 9-divide_and_rule: this script prints out the result of POWER divided by DIVIDE which are all environmental variables
 	10) 10-love_exponent_breath: this script displays the result of BREATH to the power LOVE
+	11) 11-binary_to_decimal: This script prints out the decimal representation of a binary number stored in variable BINARY
+	12) 12
