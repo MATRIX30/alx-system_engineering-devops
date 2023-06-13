@@ -10,4 +10,5 @@ This README.md file is meant to provide information about the functioning of the
 	6) 65-local_variables: this script list all the local variables using the set command 
 	6) 65-local_variables: this script list all the local variables using the set command 
 	6) 6-create_local_variable: this script creates a new local variable with name:BEST and Value:School
-	7) 
+	7) 7-create_global_variable: This script creates a new global variable name:BEST with Value:School
+	8) 8 
