@@ -16,3 +16,6 @@ This README.md file is meant to provide information about the functioning of the
 	10) 10-love_exponent_breath: this script displays the result of BREATH to the power LOVE
 	11) 11-binary_to_decimal: This script prints out the decimal representation of a binary number stored in variable BINARY
 	12) 12
+
+	13) 13-print_float: this script prints a floating point number to 2 decimal places
+	14) 
