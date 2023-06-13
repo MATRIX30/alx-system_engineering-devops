@@ -19,3 +19,6 @@ This README.md file is meant to provide information about the functioning of the
 
 	13) 13-print_float: this script prints a floating point number to 2 decimal places
 	14) 
+
+	17)103-water_and_stir: this script adds WATER in base water and STIR in base stir and prints the result
+	
