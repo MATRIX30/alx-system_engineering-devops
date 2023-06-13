@@ -1,0 +1,2 @@
+#/bin/bash
+x='oo'; echo {a..z}{a..z} | tr -d 'x'
