@@ -12,4 +12,5 @@ This README.md file is meant to provide information about the functioning of the
 	6) 6-create_local_variable: this script creates a new local variable with name:BEST and Value:School
 	7) 7-create_global_variable: This script creates a new global variable name:BEST with Value:School
 	8) 8-true_knowledge: This script adds to the variable TRUEKNOWLEDGE the value of  
-	9) 9-
+	9) 9-divide_and_rule: this script prints out the result of POWER divided by DIVIDE which are all environmental variables
+	10) 10
