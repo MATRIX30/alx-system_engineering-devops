@@ -1,2 +1,2 @@
 #!/bin/bash
-x='oo'; echo {a..z}{a..z} | tr -d 'x'
+x='oo'; echo {a..z}{a..z}"\n" | tr -d 'x'
