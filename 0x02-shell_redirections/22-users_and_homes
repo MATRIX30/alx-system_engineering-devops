@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -d: -f1 /etc/passwd | while read user; do echo -n "$user "; grep "^$user:" /etc/passwd | cut -d: -f6; done | sort
+cat /etc/passwd | sort
