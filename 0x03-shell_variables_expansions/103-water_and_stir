@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $(echo "ibase=$WATER; STIR=\$(echo \$STIR | tr -d '\\\\n'); echo \$((\$WATER+\$STIR))" | bash | xxd -p -r | tr '[:upper:]' '[:lower:]')
