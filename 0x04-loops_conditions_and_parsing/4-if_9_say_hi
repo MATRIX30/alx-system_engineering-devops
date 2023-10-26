@@ -8,5 +8,5 @@ while [ $i -le 10 ]; do
 		echo "hi"
 	fi
 	echo "Best School"
-i=$((i+1))
+	i=$((i+1))
 done
