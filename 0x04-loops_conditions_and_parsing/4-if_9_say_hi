@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# script that displays Best school
+# give me ooh
+
+i=1
+while [ $i -le 10 ]; do
+	if [ $i -eq 9 ]; then
+		echo "hi"
+	fi
+	echo "Best School"
+i=$((i+1))
+done
