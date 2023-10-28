@@ -3,4 +3,5 @@
 # In between each iteration of the loop, sleeps for 2sec
 while true; do 
 	echo "To infinity and beyond"
+	sleep 2
 done
