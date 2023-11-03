@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# script to configure ubuntu server with 
+# localhost resolves to 127.0.0.2 and facebook.com resolves to 8.8.8.8
+cp /etc/hosts ~/hosts.backup
+echo -e "127.0.0.2\tlocalhost" > ~/hosts.backup
+echo -e "8.8.8.8\tfacebook.com" > ~/hosts.backup
+cp -f ~/hosts.backup /etc/hosts
