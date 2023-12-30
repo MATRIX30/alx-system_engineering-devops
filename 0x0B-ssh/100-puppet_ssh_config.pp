@@ -8,9 +8,10 @@
 # Your SSH client configuration must be configured to use the private key ~/.ssh/school
 # Your SSH client configuration must be configured to refuse to authenticate using a password
 
-file {'/home/cyanide/workspace/config':
+file {'ssh_config':
   ensure  => file,
-  owner   => 'root',
+  path    => '/home/ubuntu/.ssh/config',
+  owner   => 'ubuntu',
   content => "Host *
       SendEnv LANG LC_*
       HashKnownHosts yes
