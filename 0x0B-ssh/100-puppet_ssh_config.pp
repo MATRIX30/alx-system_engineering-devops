@@ -1,21 +1,14 @@
-# Let’s practice using Puppet to make changes to our configuration file
-# . Just as in the previous configuration file task,
-#  we’d like you to set up your client SSH configuration file so that you can
-# connect to a server without typing a password.
+$ssh_config_content = @(EOT)
+Host *
+    IdentityFile ~/.ssh/school
+    PreferredAuthentications publickey
+    PasswordAuthentication no
+EOT
 
-# Requirements:
-
-# Your SSH client configuration must be configured to use the private key ~/.ssh/school
-# Your SSH client configuration must be configured to refuse to authenticate using a password
-
-file {'ssh_config':
+file { '/home/ubuntu/.ssh/config':
   ensure  => file,
-  path    => '/home/ubuntu/.ssh/config',
+  content => $ssh_config_content,
   owner   => 'ubuntu',
-  content => "Host *
-      SendEnv LANG LC_*
-      HashKnownHosts yes
-      GSSAPIAuthentication yes
-      IdentityFile ~/.ssh/school
-      PasswordAuthentication no\n",
+  group   => 'ubuntu',
+  mode    => '0600',
 }
