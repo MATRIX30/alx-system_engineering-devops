@@ -8,14 +8,25 @@
 # Your SSH client configuration must be configured to use the private key ~/.ssh/school
 # Your SSH client configuration must be configured to refuse to authenticate using a password
 
+include stdlib
 file {'ssh_config':
   ensure  => file,
-  path    => '/home/ubuntu/.ssh/config',
-  owner   => 'ubuntu',
+  path    => '/home/cyanide/.ssh/config',
+  owner   => 'cyanide',
   content => "Host *
-      SendEnv LANG LC_*
-      HashKnownHosts yes
-      GSSAPIAuthentication yes
-      IdentityFile ~/.ssh/school
-      PasswordAuthentication no\n",
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes"
+}
+
+file_line {'Turn off passwd auth':
+  path  => '/home/cyanide/.ssh/config',
+  line  => '    PasswordAuthentication no',
+  match => '^#?PasswordAuthentication.*',
+}
+
+file_line {'Declare identity file':
+  path  => '/home/cyanide/.ssh/config',
+  line  => '    IdentityFile ~/.ssh/school',
+  match => '^#?IdentityFile.*',
 }
