@@ -9,11 +9,6 @@
 # Your SSH client configuration must be configured to refuse to authenticate using a password
 
 include stdlib
-file {'ssh_config':
-  ensure  => file,
-  path    => '/etc/ssh/ssh_config',
-  owner   => 'ubuntu',
-}
 
 file_line {'Turn off passwd auth':
   path  => '/etc/ssh/ssh_config',
