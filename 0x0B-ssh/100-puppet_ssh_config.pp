@@ -11,8 +11,8 @@
 include stdlib
 file {'ssh_config':
   ensure  => file,
-  path    => '/home/cyanide/.ssh/config',
-  owner   => 'cyanide',
+  path    => '/home/ubuntu/.ssh/config',
+  owner   => 'ubuntu',
   content => "Host *
     SendEnv LANG LC_*
     HashKnownHosts yes
@@ -20,13 +20,13 @@ file {'ssh_config':
 }
 
 file_line {'Turn off passwd auth':
-  path  => '/home/cyanide/.ssh/config',
+  path  => '/home/ubuntu/.ssh/config',
   line  => '    PasswordAuthentication no',
   match => '^#?PasswordAuthentication.*',
 }
 
 file_line {'Declare identity file':
-  path  => '/home/cyanide/.ssh/config',
+  path  => '/home/ubuntu/.ssh/config',
   line  => '    IdentityFile ~/.ssh/school',
   match => '^#?IdentityFile.*',
 }
