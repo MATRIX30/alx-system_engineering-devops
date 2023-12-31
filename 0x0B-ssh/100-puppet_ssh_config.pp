@@ -11,7 +11,7 @@
 include stdlib
 file {'ssh_config':
   ensure  => file,
-  path    => '/home/ubuntu/.ssh/config',
+  path    => '/etc/ssh/ssh_config',
   owner   => 'ubuntu',
   content => "Host *
     SendEnv LANG LC_*
