@@ -13,10 +13,6 @@ file {'ssh_config':
   ensure  => file,
   path    => '/etc/ssh/ssh_config',
   owner   => 'ubuntu',
-  content => "Host *
-    SendEnv LANG LC_*
-    HashKnownHosts yes
-    GSSAPIAuthentication yes"
 }
 
 file_line {'Turn off passwd auth':
