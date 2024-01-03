@@ -40,5 +40,16 @@
 # If things are not going as expected, make sure to check out Nginx logs, they can be found in /var/log/.
 
 # Maarten’s PRO-tip: When you use sudo su on your web-01 you can become root like this to test your file:
+
+# update current install package list
 apt -y update
+
+# install nginx webserver with apt package manager
 apt -y install nginx
+
+# preparing content of page to serve in root directory with GET request
+echo "Hello World!" > /var/www/html/index.html
+
+# restart nginx server 
+service nginx restart
+
