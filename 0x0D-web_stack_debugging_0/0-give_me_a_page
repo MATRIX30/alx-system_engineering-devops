@@ -2,5 +2,5 @@
 # script to get Apache to run on the container and to 
 # return a page containing
 # Hello Holberton when querying the root of it.
-container_ID=$(docker run -p 8080:80 -d -it holbertonschool/265-0)
-docker exec "$container_ID" service apache2 start
+# container_ID=$(docker run -p 8080:80 -d -it holbertonschool/265-0)
+service apache2 start
