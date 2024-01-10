@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Using your debugging skills, find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80. Feel free to install whatever tool you need, start and destroy as many containers as you need to debug the issue. Then, write a Bash script with the minimum number of commands to automate your fix.
+
+# Requirements:
+
+# Nginx must be running, and listening on port 80 of all the server’s active IPv4 IPs
+# Write a Bash script that configures a server to the above requirements
+
+# update package list
+sudo  apt -y update
+
+# install nginx server
+sudo  apt -y install nginx
+
+# install net-tools utility
+sudo apt install net-tools
+
+# use netstat to ensure nginx is running on port 80
+serviceName=$(sudo netstat -lpdn | grep ':80' | tr -s ' ' | cut -d ' ' -f7 | cut -d '/' -f2)
+
+if [ "$serviceName" != "nginx:" ]; then 
+	# change the configuration of nginx to listen at port 80
+	config_str="\n\tlisten 80 default_server;\n\tlisten [::]:80 default_server;\n"
+	sed -i "/^server {/a\ $config_str" /etc/nginx/sites-available/default;
+fi
+
+# run nginx
+sudo service nginx start
