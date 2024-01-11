@@ -10,4 +10,4 @@
 ln -sf /etc/nginx/sites-available/ /etc/nginx/sites-enabled/
 
 # run nginx
-sudo service nginx start
+sudo service nginx restart
