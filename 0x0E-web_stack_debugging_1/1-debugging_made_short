@@ -3,4 +3,4 @@
 # enable the default site block by creatings symbolic link of default file in /etc/nginx/sites-enebled/
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 service nginx restart
-pkill nginx
+pkill -f nginx
