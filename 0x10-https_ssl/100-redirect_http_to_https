@@ -34,13 +34,18 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend  Capnot34_frontend
+frontend  Cyanide_web_http_frontend
         bind *:80
         mode http
-        default_backend Capnot34_backend
+        default_backend Cyanide_web_backend
+        # redirect scheme https code 301 if !{ ssl_fc }
+
+frontend  Cyanide_web_https_frontend
         bind *:443 ssl crt /etc/haproxy/certificates/www.cyanide.com.pem
-        redirect scheme https code 301 if !{ ssl_fc }
-backend Capnot34_backend
+        mode http
+        default_backend Cyanide_web_backend
+
+backend Cyanide_web_backend
         balance roundrobin
         server 170159-web-01 54.224.22.152:80 check
         server 170159-web-02 18.210.13.192:80 check
