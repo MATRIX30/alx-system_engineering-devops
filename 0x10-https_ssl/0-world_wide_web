@@ -4,6 +4,16 @@
 domain="$1"
 subdomain="$2"
 
+print_inf(){
+print_info() {
+    local name="$1"
+    local age="$2"
+    
+    echo "Name: $name"
+    echo "Age: $age"
+}
+}
+
 if [ $# -eq 1 ]; then
 	# www domain
 	text=$(dig "www.${domain}" | grep -A1 'ANSWER SECTION:'  > /dev/null)
@@ -37,13 +47,3 @@ elif [ $# -ge 2 ]; then
 else 
 	echo "Usage:./0-world_wide_web domain subdmain"
 fi
-
-print_info() {
-    local name="$1"
-    local age="$2"
-    
-    echo "Name: $name"
-    echo "Age: $age"
-}
-
-# Example usage of the function
