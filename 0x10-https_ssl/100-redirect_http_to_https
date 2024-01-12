@@ -38,7 +38,7 @@ frontend  Cyanide_web_http_frontend
         bind *:80
         mode http
         default_backend Cyanide_web_backend
-        # redirect scheme https code 301 if !{ ssl_fc }
+        redirect scheme https code 301 if !{ ssl_fc }
 
 frontend  Cyanide_web_https_frontend
         bind *:443 ssl crt /etc/haproxy/certificates/www.cyanide.com.pem
