@@ -2,7 +2,7 @@
 frontend web-frontend
         mode http
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.cyberfrontier.tech/myprivateandpublickeys.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/www.cyanide.tech/myprivateandpublickeys.pem
         http-request redirect scheme https unless { ssl_fc }
         default_backend web-backend
 
