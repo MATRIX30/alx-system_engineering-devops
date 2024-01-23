@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# program to configure server for nginx to be run by user nginx instead of the default root user in 7 lines or less
+service nginx stop
+chmod +r /etc/nginx/nginx.conf
+sudo -u nginx service nginx start
