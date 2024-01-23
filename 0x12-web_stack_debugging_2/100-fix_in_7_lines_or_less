@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# program to configure server for nginx to be run by user nginx instead of the default root user in 7 lines or less
-service nginx stop
-chmod +r /etc/nginx/nginx.conf
+# Run Nginx as Nginx
+sed -i 's/user www-data/user nginx/' /etc/nginx/nginx.conf
+chmod 644 /etc/nginx/nginx.conf
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+pkill apache2
 sudo -u nginx service nginx start
