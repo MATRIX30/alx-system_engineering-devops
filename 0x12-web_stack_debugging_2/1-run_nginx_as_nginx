@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
-# program to configure server for nginx to be run by user
-# nginx instead of the default root user
+# Run Nginx as Nginx
 
-# start by stoping  nginx if running 
-service nginx stop
+# Stop nginx if it's currently running
+sudo service nginx stop
 
-# modify /etc/nginx/nginx.conf to allow user nginx
-sed -i "/#user www-data;/a\user nginx;" /etc/nginx/nginx.conf
+# Change nginx user in nginx.conf
+sed -i 's/user www-data/user nginx/' /etc/nginx/nginx.conf
 
-# change owner of nginx folder to nginx
-sudo chown -R nginx:nginx /etc/nginx /var/log/nginx /var/lib/nginx
+# Change ownership of nginx directories to nginx user
+chmod 644 /etc/nginx/nginx.conf
 
-# give atleast read privilleges /etc/nginx/nginx.conf
-chmod +r /etc/nginx/nginx.conf
+# Configure nginx to listen on all active IPs on port 8080
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 
-# run the service as nginx user
+# apache may interfere with nginx so kill the process if it is running
+pkill apache2
+
+# Start nginx
 sudo -u nginx service nginx start
