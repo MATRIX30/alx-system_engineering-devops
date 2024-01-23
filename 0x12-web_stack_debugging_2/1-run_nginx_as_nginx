@@ -5,9 +5,14 @@
 # start by stoping  nginx if running 
 service nginx stop
 
+# modify /etc/nginx/nginx.conf to allow user nginx
+sed -i "/#user www-data;/a\user nginx;" /etc/nginx/nginx.conf
+
+# change owner of nginx folder to nginx
+sudo chown -R nginx:nginx /etc/nginx /var/log/nginx /var/lib/nginx
+
 # give atleast read privilleges /etc/nginx/nginx.conf
 chmod +r /etc/nginx/nginx.conf
 
 # run the service as nginx user
 sudo -u nginx service nginx start
-
