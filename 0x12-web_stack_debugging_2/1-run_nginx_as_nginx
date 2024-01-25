@@ -8,9 +8,6 @@ service nginx stop
 # modify /etc/nginx/nginx.conf to allow user nginx
 sed -i "/#user www-data;/a\user nginx;" /etc/nginx/nginx.conf
 
-# change owner of nginx folder to nginx
-chown -R nginx:nginx  /etc/nginx /var/log/nginx /var/lib/nginx
-
 # configure nginx to listent on port 8080 for all ips
 sed -i "/listen 80 default_server;/a\ \tlisten 8080;" /etc/nginx/sites-available/default
 
