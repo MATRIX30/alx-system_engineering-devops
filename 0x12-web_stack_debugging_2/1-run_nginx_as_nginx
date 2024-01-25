@@ -12,7 +12,7 @@ sed -i "/#user www-data;/a\user nginx;" /etc/nginx/nginx.conf
 sed -i "/listen 80 default_server;/a\ \tlisten 8080;" /etc/nginx/sites-available/default
 
 # give atleast read privilleges /etc/nginx/nginx.conf
-chown nginx:nginx /etc/nginx/nginx.conf
+# chown nginx:nginx /etc/nginx/nginx.conf
 chmod 644 /etc/nginx/nginx.conf
 
 # kill apache2 cause its running on port 8080
