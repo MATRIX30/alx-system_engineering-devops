@@ -1,41 +1,27 @@
 #!/usr/bin/python3
-
+"""python script to fetch employee information from their ID
+   using an api
 """
-Python script that exports data in the JSON format.
-"""
-
-from requests import get
-from sys import argv
-import json
 
 if __name__ == "__main__":
-    response = get('https://jsonplaceholder.typicode.com/todos/')
-    data = response.json()
+    import json
+    from os import sys
+    from requests import get
 
-    row = []
-    response2 = get('https://jsonplaceholder.typicode.com/users')
-    data2 = response2.json()
+    employee_ID = sys.argv[1]
+    json_file = "{}.json".format(employee_ID)
+    user_info = get("https://jsonplaceholder.typicode.com/users?id={}".format(
+        employee_ID))
+    user_name = (user_info.json()[0].get('username'))
+    todos = get("https://jsonplaceholder.typicode.com/todos?userId={}".format(
+        employee_ID))
 
-    for i in data2:
-        if i['id'] == int(argv[1]):
-            u_name = i['username']
-            id_no = i['id']
+    user_info = {"{}".format(employee_ID): []}
 
-    row = []
-
-    for i in data:
-
-        new_dict = {}
-
-        if i['userId'] == int(argv[1]):
-            new_dict['username'] = u_name
-            new_dict['task'] = i['title']
-            new_dict['completed'] = i['completed']
-            row.append(new_dict)
-
-    final_dict = {}
-    final_dict[id_no] = row
-    json_obj = json.dumps(final_dict)
-
-    with open(argv[1] + ".json",  "w") as f:
-        f.write(json_obj)
+    for todo in todos.json():
+        task = {"task": f"{todo.get('title')}",
+                "completed": todo.get('completed'),
+                "username": f"{user_name}"}
+        user_info.get("{}".format(employee_ID)).append(task)
+    with open(json_file, 'w') as f:
+        json.dump(user_info, f)
