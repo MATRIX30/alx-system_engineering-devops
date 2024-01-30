@@ -1,24 +1,23 @@
 #!/usr/bin/python3
-"""Exports to-do list information for a given employee ID to CSV format."""
-
-import csv
-import requests
-import sys
-
+"""python script to fetch employee information from their ID
+   using an api
+"""
 
 if __name__ == "__main__":
-    id = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com"
+    import csv
+    from os import sys
+    from requests import get
 
-    user = requests.get(f"{url}/users/{id}").json()
-    user_name = user.get("username")
-    todos = requests.get(f"{url}/todos/?userId={id}").json()
+    employee_ID = sys.argv[1]
+    csv_file = "{}.csv".format(employee_ID)
+    user_info = get("https://jsonplaceholder.typicode.com/users?id={}".format(
+        employee_ID))
+    user_name = (user_info.json()[0].get('name'))
+    todos = get("https://jsonplaceholder.typicode.com/todos?userId={}".format(
+        employee_ID))
 
-    with open(f"{id}.csv", "w", newline="") as csv_file:
-        writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
-
-        [writer.writerow([id,
-                          user_name,
-                          t.get("completed"),
-                          t.get("title")
-                          ]) for t in todos]
+    with open(csv_file, 'w') as f:
+        csv_writer = csv.writer(f)
+        for todo in todos.json():
+            csv_writer.writerow([employee_ID, user_name,
+                                 todo.get('completed'), todo.get('title')])
