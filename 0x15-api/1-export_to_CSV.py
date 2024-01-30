@@ -4,7 +4,6 @@
 """
 
 if __name__ == "__main__":
-    import csv
     from os import sys
     from requests import get
 
@@ -17,7 +16,8 @@ if __name__ == "__main__":
         employee_ID))
 
     with open(csv_file, 'w') as f:
-        csv_writer = csv.writer(f)
+        # csv_writer = csv.writer(f)
+        # csv_writer.writerows(data)
         for todo in todos.json():
-            csv_writer.writerow([employee_ID, user_name,
-                                 todo.get('completed'), todo.get('title')])
+            f.write('"{}","{}","{}","{}"\n'.format(
+             employee_ID, user_name, todo.get('completed'), todo.get('title')))
