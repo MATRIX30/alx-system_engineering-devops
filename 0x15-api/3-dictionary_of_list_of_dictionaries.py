@@ -1,34 +1,29 @@
 #!/usr/bin/python3
-"""Script that exports to json file
-    """
-
-import json
-from requests import get
-
-
-def main():
-    task_res = get("https://jsonplaceholder.typicode.com/todos")
-    user_res = get(
-        "https://jsonplaceholder.typicode.com/users")
-    filename = "todo_all_employees.json"
-
-    with open(filename, "w") as f:
-        final_dict = {}
-        for user in user_res.json():
-            employee_name = user.get("username")
-            employee_id = user.get("id")
-            task_list = []
-            for task in task_res.json():
-                if task.get("userId") == employee_id:
-                    temp = {}
-                    temp["username"] = employee_name
-                    temp["task"] = task.get("title")
-                    temp["completed"] = task.get("completed")
-                    task_list.append(temp)
-
-            final_dict[employee_id] = task_list
-        json.dump(final_dict, f)
-
+"""python script to fetch employee information from their ID
+   using an api
+"""
 
 if __name__ == "__main__":
-    main()
+    import json
+    from requests import get
+
+    json_file = "todo_all_employees.json"
+    users_info = get("https://jsonplaceholder.typicode.com/users")
+    todos = get("https://jsonplaceholder.typicode.com/todos")
+
+    all_employee_todos = {}
+
+    for user in users_info.json():
+        user_task = []
+        user_id = "{}".format(user.get('id'))
+        for todo in todos.json():
+            if todo.get('userId') == user.get('id'):
+                user_task.append(
+                    {"username": "{}".format(user.get('username')),
+                     "task": "{}".format(todo.get('title')),
+                     "completed": todo.get('completed')})
+
+        all_employee_todos[user_id] = user_task
+
+    with open(json_file, 'w') as f:
+        json.dump(all_employee_todos, f)
