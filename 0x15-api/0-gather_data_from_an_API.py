@@ -4,8 +4,8 @@
 """
 
 if __name__ == "__main__":
-    from requests import get
     from os import sys
+    from requests import get
 
     employee_ID = sys.argv[1]
     user_info = get("https://jsonplaceholder.typicode.com/users?id={}".format(
