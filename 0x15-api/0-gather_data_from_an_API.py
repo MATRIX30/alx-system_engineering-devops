@@ -22,4 +22,5 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):".format(
         user_name, number_of_completed_task, number_of_task))
     for todo in todos.json():
-        print("\t {}".format(todo.get('title')))
+        if todo.get('completed'):
+            print("\t {}".format(todo.get('title')))
