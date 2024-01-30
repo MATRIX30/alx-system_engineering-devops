@@ -12,7 +12,7 @@ if __name__ == "__main__":
     csv_file = "{}.csv".format(employee_ID)
     user_info = get("https://jsonplaceholder.typicode.com/users?id={}".format(
         employee_ID))
-    user_name = (user_info.json()[0].get('name'))
+    user_name = (user_info.json()[0].get('username'))
     todos = get("https://jsonplaceholder.typicode.com/todos?userId={}".format(
         employee_ID))
 
