@@ -2,8 +2,8 @@
 """python script to fetch employee information from their ID
    using an api
 """
-from os import sys
 from requests import get
+from os import sys
 
 employee_ID = sys.argv[1]
 # getting user data
