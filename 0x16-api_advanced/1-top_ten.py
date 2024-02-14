@@ -1,18 +1,29 @@
 #!/usr/bin/python3
-"""Module for task 1"""
+"""
+Method to get the top 10 hottest topic for a subreddit
+"""
 
 
 def top_ten(subreddit):
-    """Queries the Reddit API and returns the top 10 hot posts
-    of the subreddit"""
-    import requests
+    """
+    Write a function that queries the Reddit API and prints
+    the titles of the first 10 hot posts listed for a given subreddit.
 
-    sub_info = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
-                            .format(subreddit),
-                            headers={"User-Agent": "My-User-Agent"},
-                            allow_redirects=False)
-    if sub_info.status_code >= 300:
-        print('None')
+    Requirements:
+    Prototype: def top_ten(subreddit)
+    If not a valid subreddit, print None.
+    NOTE: Invalid subreddits may return a redirect to search results.
+    Ensure that you are not following redirects.
+    """
+    import requests
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    header = {
+        'User-Agent': 'alx-client/1.0'
+    }
+    data = requests.get(url, allow_redirects=False, headers=header)
+    if (data.status_code == 200):
+        hot_topics = data.json()["data"]["children"]
+        for item in hot_topics:
+            print(item["data"]["title"])
     else:
-        [print(child.get("data").get("title"))
-         for child in sub_info.json().get("data").get("children")]
+        print(None)
