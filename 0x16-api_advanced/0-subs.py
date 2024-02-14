@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+this is a module to the number of subscribers to a subreddit
+"""
+
 
 def number_of_subscribers(subreddit):
     """
