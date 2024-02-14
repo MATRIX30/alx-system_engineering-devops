@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+this is a module to return top 10 hot topics for a subreddit
+"""
+
 
 def top_ten(subreddit):
     """
