@@ -26,6 +26,14 @@ def number_of_subscribers(subreddit):
     header = {
         'User-Agent': 'alx-client/1.0'
     }
+
+    urltest = "https://www.reddit.com/subreddits/search.json?q={}".format(
+        subreddit)
+    testdata = requests.get(urltest, headers=header, allow_redirects=False)
+
+    if testdata.json()["data"]["dist"] == 0:
+        return 0
+
     data = requests.get(url, headers=header, allow_redirects=False)
     status_code = data.status_code
     if (status_code == 200):
