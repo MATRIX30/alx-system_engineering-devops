@@ -7,7 +7,9 @@ User=ubuntu
 Group=ubuntu
 WorkingDirectory=/home/ubuntu/deployments/AirBnB_clone_v4
 
-ExecStart = /usr/bin/env gunicorn web_dynamic.2-hbnb:app  --workers=3 --bind=0.0.0.0:5003 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log
+ExecStart = /usr/bin/env gunicorn web_dynamic.2-hbnb:app  --workers 3 --bind 0.0.0.0:5003 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log
+
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
