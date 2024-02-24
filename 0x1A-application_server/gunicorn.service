@@ -1,13 +1,12 @@
 [Unit]
-Description=Service to autorun gunicorn instance
+Description=Gunicorn instance that serves our Airbnb application
 After=network.target
 
 [Service]
 User=ubuntu
-Group=ubuntu
-WorkingDirectory=/home/ubuntu/deployments/AirBnB_clone_v4
-
-ExecStart = /usr/bin/env gunicorn web_dynamic.2-hbnb:app  --workers 3 --bind 0.0.0.0:5003 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log
+Groupe=ubuntu
+WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
+ExecStart=/home/ubuntu/.local/bin/gunicorn web_dynamic.2-hbnb:app --bind 0.0.0.0:5003 --workers 3 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log
 
 Restart=always
 
