@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-# reload gracefully gunicorn
-systemctl status gunicorn | grep -oE 'Main PID: [0-9]+' | cut -d ' ' -f3 | xargs kill -HUP
+# script to gracefully reload gunicorn without disruption
+# script searches for gunicorn master process and sends Hangup signal(HUP)
+# which triggers the gracefull killing of worker processes and provisioning of new workers
+# with the new configuration information
+pgrep '[g]unicorn' | awk '{print $2}' | kill -HUP
