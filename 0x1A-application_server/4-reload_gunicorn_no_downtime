@@ -4,4 +4,5 @@
 # which triggers the gracefull killing of worker processes and provisioning of new workers
 # with the new configuration information
 # pgrep '[g]unicorn' | awk '{print $2}' | xargs kill -HUP
-pkill -HUP -f "gunicorn"
+# pkill -HUP -f "gunicorn"
+systemctl status gunicorn | grep -oE 'Main PID: [0-9]+' | cut -d ' ' -f3 | xargs kill -HUP
