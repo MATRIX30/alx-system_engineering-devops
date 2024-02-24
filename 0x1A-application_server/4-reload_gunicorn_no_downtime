@@ -3,4 +3,4 @@
 # script searches for gunicorn master process and sends Hangup signal(HUP)
 # which triggers the gracefull killing of worker processes and provisioning of new workers
 # with the new configuration information
-pgrep '[g]unicorn' | awk '{print $2}' | kill -HUP
+pgrep '[g]unicorn' | awk '{print $2}' | xargs kill -HUP
